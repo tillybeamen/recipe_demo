@@ -17,6 +17,7 @@
         </div>
     </nav>
     <form action="/update/recipe" method="post" class="col-11 p-4 my-4 bg-dark text-light mx-auto">
+        <input type="hidden" value="{{session.user_id}}" name="user_id">
         <h2 class="text-primary">Edit Recipe</h2>
         {% with messages = get_flashed_messages(category_filter=['recipe']) %}
             {% if messages %}

@@ -17,8 +17,8 @@ class Recipe:
         self.updated_at = data['updated_at']
 
     @classmethod
-    def save(cls,data):
-        query = "INSERT INTO recipes (name, description, instructions, under30, date_made, user_id, first_name) VALUES (%(name)s,%(description)s,%(instructions)s,%(under30)s,%(date_made)s,%(user_id)s, %(first_name)s;"
+    def save(cls,data): 
+        query = "INSERT INTO recipes (name, description, instructions, under30, date_made, user_id) VALUES (%(name)s,%(description)s,%(instructions)s,%(under30)s,%(date_made)s,%(user_id)s);"
         return connectToMySQL(DATABASE).query_db(query, data)
 
     @classmethod
